@@ -3,14 +3,10 @@
 <% content_for :title, "Training resources" %>
 
 <h1>Training resources</h1>
+<%= link_to "New", new_training_resource_path %>
 
-<div id="training_resources">
+<div class="grid grid-cols-3 gap-4">
   <% @training_resources.each do |training_resource| %>
-    <%= render training_resource %>
-    <p>
-      <%= link_to "Show this training resource", training_resource %>
-    </p>
+    <%= link_to((render training_resource), training_resource)%>
   <% end %>
 </div>
-
-<%= link_to "New training resource", new_training_resource_path, class: %w[text-amber-300] %>
