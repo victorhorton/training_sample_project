@@ -10,5 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 0) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_19_034506) do
+  create_table "training_resources", force: :cascade do |t|
+    t.string "author"
+    t.string "title"
+    t.string "short_description"
+    t.string "long_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end
