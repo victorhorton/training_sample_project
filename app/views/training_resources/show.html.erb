@@ -1,10 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @training_resource %>
-
-<div>
-  <%= link_to "Edit this training resource", edit_training_resource_path(@training_resource) %> |
-  <%= link_to "Back to training resources", training_resources_path %>
-
-  <%= button_to "Destroy this training resource", @training_resource, method: :delete %>
+<div class="flex gap-4 m-2">
+  <%= link_to "Back", training_resources_path, class: '' %>
+  <%= link_to "Edit", edit_training_resource_path(@training_resource), class: '' %>
+  <%= button_to "Delete", @training_resource, method: :delete, class: '' %>
 </div>
+<div class="mb-5">
+  <h1 class="text-5xl font-bold">
+    <%= @training_resource.title %>
+  </h1>
+  <p>
+    <%= @training_resource.author %>
+  </p>
+</div>
+<p>
+  <%= @training_resource.long_description %>
+</p>
