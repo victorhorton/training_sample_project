@@ -1,15 +1,11 @@
-10.times do
-  Tag.create(
-    name: Faker::Company.buzzword
-  )
+require 'yaml'
+
+tags_data = YAML.load(File.open(Rails.root.join("db/seeds_data/tags.yaml")))
+tags_data.each do |row|
+  Tag.create(row.to_hash)
 end
 
-100.times do
-  TrainingResource.create(
-    author: Faker::Name.name,
-    title: Faker::Company.catch_phrase,
-    short_description: Faker::Lorem.sentence,
-    long_description: Faker::Lorem.paragraph,
-    tag_ids: Faker::Number.between(from: 1, to: 10)
-  )
+training_resources_data = YAML.load(File.open(Rails.root.join("db/seeds_data/training_resources.yaml")))
+training_resources_data.each_with_index do |row, idx|
+  TrainingResource.create(row.to_hash)
 end

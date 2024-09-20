@@ -12,6 +12,11 @@
   <p>
     <%= @training_resource.author %>
   </p>
+  <div class="flex">
+    <% @training_resource.tags.each do |tag| %>
+      <%= tag.name %>
+    <% end %>
+  </div>
 </div>
 <p>
   <%= @training_resource.long_description %>
