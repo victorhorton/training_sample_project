@@ -1,12 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<div data-controller="training-resources">
+  <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Training resources" %>
+  <% content_for :title, "Training resources" %>
 
-<h1>Training resources</h1>
-<%= link_to "New", new_training_resource_path %>
+  <h1>Training resources</h1>
+  <%= link_to "New", new_training_resource_path %>
 
-<div class="grid grid-cols-3 gap-4">
-  <% @training_resources.each do |training_resource| %>
-    <%= link_to((render training_resource), training_resource)%>
-  <% end %>
+  <%= select_tag(
+    :pagination,
+    options_for_select([9, 15, 30], params[:per_page]),
+    {
+      'data-pagination-target': "select",
+      'data-controller': "pagination",
+      'data-action': "change->pagination#setPagination"
+    }) %>
+  <div class="grid grid-cols-3 gap-4">
+    <% @training_resources.each do |training_resource| %>
+      <%= link_to((render training_resource), training_resource)%>
+    <% end %>
+  </div>
+  <%= link_to(params[:page].to_i - 1, training_resources_path(page: params[:page].to_i - 1)) %>
+  <%= link_to(params[:page].to_i + 1, training_resources_path(page: params[:page].to_i + 1)) %>
 </div>

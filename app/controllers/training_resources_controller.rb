@@ -1,9 +1,10 @@
 class TrainingResourcesController < ApplicationController
+  include Pagination
   before_action :set_training_resource, only: %i[ show edit update destroy ]
 
   # GET /training_resources or /training_resources.json
   def index
-    @training_resources = TrainingResource.all
+    @training_resources = TrainingResource.limit(limit).offset(offset)
   end
 
   # GET /training_resources/1 or /training_resources/1.json
