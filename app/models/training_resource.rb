@@ -19,7 +19,7 @@ class TrainingResource < ApplicationRecord
 
       eager_load(:tags).where(pattern, query: "%#{query}%")
     else
-      all
+      eager_load(:tags).all
     end
   }
 end

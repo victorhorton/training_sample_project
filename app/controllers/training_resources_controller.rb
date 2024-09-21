@@ -4,6 +4,8 @@ class TrainingResourcesController < ApplicationController
 
   # GET /training_resources or /training_resources.json
   def index
+    @page = params[:page] || 1
+    @per_page = params[:per_page] || 9
     @training_resources = TrainingResource.limit(limit).offset(offset).search(params[:search])
     @max_number = TrainingResource.search(params[:search]).count / limit
   end

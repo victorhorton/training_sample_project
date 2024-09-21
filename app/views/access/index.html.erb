@@ -19,7 +19,7 @@
   <div class="flex flex-wrap justify-evenly my-10 gap-4">
     <% @tags.each do |tag| %>
       <div class="hover:scale-125 hover:bg-white duration-75">
-        <%= link_to tag.name.titleize, training_resources_path(search: tag.name) %>
+        <%= link_to tag.name.titleize, training_resources_path(search: tag.name, page: 1, per_page: 9) %>
       </div>
     <% end %>
   </div>

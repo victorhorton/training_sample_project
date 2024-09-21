@@ -8,7 +8,7 @@
   <div class="flex justify-between my-6">
     <%= select_tag(
       :pagination,
-      options_for_select([9, 15, 30], params[:per_page]),
+      options_for_select([9, 15, 30], @per_page),
       {
         'data-pagination-target': "select",
         'data-controller': "pagination",
@@ -31,9 +31,9 @@
     <% end %>
   </div>
   <div class="my-6" data-controller="pagination">
-    <%= first_pagination_button(params[:page]) %>
-    <%= previous_pagination_button(params[:page]) %>
-    <%= next_pagination_button(params[:page], @max_number) %>
-    <%= last_pagination_button(params[:page], @max_number) %>
+    <%= first_pagination_button(@page) %>
+    <%= previous_pagination_button(@page) %>
+    <%= next_pagination_button(@page, @max_number) %>
+    <%= last_pagination_button(@page, @max_number) %>
   </div>
 </div>
