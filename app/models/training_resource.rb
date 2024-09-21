@@ -3,17 +3,21 @@ class TrainingResource < ApplicationRecord
 
   scope :search, ->(query) {
     if query.present?
-      columns = [
-        "author",
-        "title",
-        "short_description",
-        "long_description"
-      ]
+      columns = {
+        training_resources: [
+          "author",
+          "title",
+          "short_description",
+          "long_description"
+        ],
+        tags: [ "name" ]
+      }
 
-      where(
-        columns.map { |column| "#{column} LIKE :query" }.join(" OR "),
-        query: "%#{query}%"
-      )
+      pattern = columns.map { |table, columns|
+        columns.map { |column| "#{table}.#{column} LIKE :query" }.join(" OR ")
+      }.join(" OR ")
+
+      eager_load(:tags).where(pattern, query: "%#{query}%")
     else
       all
     end
