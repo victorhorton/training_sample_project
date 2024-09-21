@@ -11,14 +11,13 @@ class TrainingResourcesTest < ApplicationSystemTestCase
   end
 
   test "should create training resource" do
-    visit training_resources_url
-    click_on "New training resource"
+    visit new_training_resource_url
 
     fill_in "Author", with: @training_resource.author
     fill_in "Long description", with: @training_resource.long_description
     fill_in "Short description", with: @training_resource.short_description
     fill_in "Title", with: @training_resource.title
-    click_on "Create Training resource"
+    click_on "Create"
 
     assert_text "Training resource was successfully created"
     click_on "Back"
@@ -26,13 +25,13 @@ class TrainingResourcesTest < ApplicationSystemTestCase
 
   test "should update Training resource" do
     visit training_resource_url(@training_resource)
-    click_on "Edit this training resource", match: :first
+    click_on "Edit", match: :first
 
     fill_in "Author", with: @training_resource.author
     fill_in "Long description", with: @training_resource.long_description
     fill_in "Short description", with: @training_resource.short_description
     fill_in "Title", with: @training_resource.title
-    click_on "Update Training resource"
+    click_on "Update"
 
     assert_text "Training resource was successfully updated"
     click_on "Back"
@@ -40,7 +39,7 @@ class TrainingResourcesTest < ApplicationSystemTestCase
 
   test "should destroy Training resource" do
     visit training_resource_url(@training_resource)
-    click_on "Destroy this training resource", match: :first
+    click_on "Delete", match: :first
 
     assert_text "Training resource was successfully destroyed"
   end
