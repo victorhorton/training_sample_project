@@ -1,0 +1,26 @@
+<div class="p-10 lg:p-40 bg-green-600 text-zinc-200">
+  <h1 class="text-center text-4xl lg:text-6xl font-extrabold">Empowering your learning journey</h1>
+  <p class="text-center my-4">Everyone everyone has the potential to excel. Our comprehensive training resources are designed to help you unlock your skills, enhance your knowledge, and achieve your goals.</p>
+  <div class="flex gap-4 mt-14 justify-center">
+    <%= link_to('Sign In', '', class: 'border font-medium hover:shadow-inner border-white bg-white text-green-600 px-4 py-2 rounded-full') %>
+    <%= link_to('Sign Up', '', class: 'border font-medium hover:shadow-inner border-white text-white px-4 py-2 rounded-full') %>
+  </div>
+</div>
+<div class="p-10 lg:px-40 pt-20">
+  <h1 class="text-6xl font-extrabold">Features</h1>
+  <ul class="ms-4 my-8 list-disc text-lg">
+    <li class="my-2">Video Content: Watch engaging videos that make learning enjoyable and effective</li>
+    <li class="my-2">Intuitive Search Feature: Easily find the courses and videos you need with our powerful search functionality</li>
+    <li class="my-2">Flexible Learning: Access our resources anytime, anywhere, to fit your busy schedule</li>
+  </ul>
+</div>
+<div class="p-10 lg:px-40 pt-20">
+  <h1 class="text-6xl font-extrabold">Top Training Categories</h1>
+  <div class="flex justify-evenly my-10">
+    <% @tags.each do |tag| %>
+      <div class="hover:scale-125 duration-75">
+        <%= link_to tag.name.titleize, training_resources_path(search: tag.name) %>
+      </div>
+    <% end %>
+  </div>
+</div>
