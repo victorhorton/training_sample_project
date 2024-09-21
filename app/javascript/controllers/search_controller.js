@@ -3,7 +3,8 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["input"]; // Define targets if necessary
 
-  setSearch(event) {
+  submit(event) {
+    event.preventDefault();
     const searchParams = new URLSearchParams(window.location.search);
     searchParams.set("search", this.inputTarget.value);
     window.location.replace(

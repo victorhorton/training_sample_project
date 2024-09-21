@@ -5,6 +5,7 @@ class TrainingResourcesController < ApplicationController
   # GET /training_resources or /training_resources.json
   def index
     @training_resources = TrainingResource.limit(limit).offset(offset).search(params[:search])
+    @max_number = TrainingResource.search(params[:search]).count / limit
   end
 
   # GET /training_resources/1 or /training_resources/1.json

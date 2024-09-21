@@ -3,22 +3,26 @@
 
   <% content_for :title, "Training resources" %>
 
-  <h1>Training resources</h1>
-  <%= link_to "New", new_training_resource_path %>
+  <h1 class="text-4xl font-extrabold">Training resources</h1>
 
-  <%= select_tag(
-    :pagination,
-    options_for_select([9, 15, 30], params[:per_page]),
-    {
-      'data-pagination-target': "select",
-      'data-controller': "pagination",
-      'data-action': "change->pagination#setPagination"
-    }
-  ) %>
+  <div class="flex justify-between my-6">
+    <%= select_tag(
+      :pagination,
+      options_for_select([9, 15, 30], params[:per_page]),
+      {
+        'data-pagination-target': "select",
+        'data-controller': "pagination",
+        'data-action': "change->pagination#setCount",
+        class: 'rounded border-gray-800'
+      }
+    ) %>
 
-  <div data-controller="search">
-    <%= search_field_tag(:search, params[:search], 'data-search-target': "input") %>
-    <%= button_tag('Search', 'data-action': "click->search#setSearch") %>
+    <div data-controller="search">
+      <%= form_tag('', 'data-action': "submit->search#submit") do %>
+        <%= search_field_tag(:search, params[:search], {'data-search-target': "input", class: 'rounded focus:shadow-inner border-gray-800'}) %>
+        <%= button_tag('Search', class: 'p-2 border hover:shadow-inner rounded border-gray-800') %>
+      <% end %>
+    </div>
   </div>
 
   <div class="grid grid-cols-3 gap-4">
@@ -26,6 +30,10 @@
       <%= link_to((render training_resource), training_resource)%>
     <% end %>
   </div>
-  <%= link_to(params[:page].to_i - 1, training_resources_path(page: params[:page].to_i - 1)) %>
-  <%= link_to(params[:page].to_i + 1, training_resources_path(page: params[:page].to_i + 1)) %>
+  <div class="my-6" data-controller="pagination">
+    <%= first_pagination_button(params[:page]) %>
+    <%= previous_pagination_button(params[:page]) %>
+    <%= next_pagination_button(params[:page], @max_number) %>
+    <%= last_pagination_button(params[:page], @max_number) %>
+  </div>
 </div>
