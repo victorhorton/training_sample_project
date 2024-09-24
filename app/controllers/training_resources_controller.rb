@@ -69,6 +69,16 @@ class TrainingResourcesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def training_resource_params
-      params.require(:training_resource).permit(:author, :title, :short_description, :long_description, { tag_ids: [], tags_attributes: [ :name ] })
+      params.require(:training_resource).permit(
+        :author,
+        :title,
+        :short_description,
+        :long_description,
+        :featured_image,
+        {
+          tag_ids: [],
+          tags_attributes: [ :name ]
+        }
+      )
     end
 end

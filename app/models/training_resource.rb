@@ -1,4 +1,5 @@
 class TrainingResource < ApplicationRecord
+  has_one_attached :featured_image
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 

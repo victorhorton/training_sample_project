@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
     <% @training_resources.each do |training_resource| %>
       <%= link_to((render training_resource), training_resource)%>
     <% end %>
