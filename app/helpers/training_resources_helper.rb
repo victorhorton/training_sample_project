@@ -1,4 +1,8 @@
 module TrainingResourcesHelper
+  def youtube_iframe(youtube_video_id)
+    tag.iframe(width: "560", height: "315", src: "https://www.youtube.com/embed/#{youtube_video_id}", title: "YouTube video player", frameborder: "0", allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", referrerpolicy: "strict-origin-when-cross-origin", allowfullscreen: true)
+  end
+
   def first_pagination_button(current_number)
     at_minimum = current_number.to_i - 1 < 1
 

@@ -12,6 +12,7 @@
   <p>
     <%= @training_resource.author %>
   </p>
+  <%= youtube_iframe(@training_resource.youtube_video_id) %>
   <div class="flex gap-4">
     <% @training_resource.tags.each do |tag| %>
       <div class="px-2 py-1 rounded text-xs bg-gray-800 text-white"><%= tag.name.titleize %></div>
