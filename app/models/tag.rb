@@ -11,6 +11,10 @@ class Tag < ApplicationRecord
     .limit(5)
   }
 
+  def titlized_name
+    name.titleize
+  end
+
   private
 
   def downcase_name
