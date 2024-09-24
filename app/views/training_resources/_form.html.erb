@@ -32,6 +32,20 @@
   </div>
 
   <div>
+    <%= form.fields_for :tags, Tag.new do |tag_field| %>
+      <%= tag_field.label :name, style: "display: block" %>
+      <%= tag_field.text_field :name %>
+    <% end %>
+
+    <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |b| %>
+      <div>
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

@@ -1,5 +1,7 @@
 class Tag < ApplicationRecord
-  has_and_belongs_to_many :training_resources
+  has_many :taggings, dependent: :destroy
+  has_many :training_resources, through: :taggings
+
   before_save :downcase_name
 
   scope :most_popular, -> {
