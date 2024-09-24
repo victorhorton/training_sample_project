@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_24_014311) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_24_025844) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_24_014311) do
     t.string "long_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "youtube_video_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

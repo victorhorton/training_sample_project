@@ -8,6 +8,7 @@ code_aesthetic_data.each_with_index do |row, idx|
     short_description: row['short_description'],
     long_description: row['long_description'],
     featured_image: File.open(Rails.root.join("db/seeds_data/#{row['featured_image_path']}")),
+    youtube_video_id: row['youtube_video_id']
   )
 
   row['tag_names'].each do |tag|
