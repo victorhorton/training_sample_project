@@ -1,24 +1,31 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="flex gap-4 m-2">
-  <%= link_to "Back", training_resources_path, class: '' %>
-  <%= link_to "Edit", edit_training_resource_path(@training_resource), class: '' %>
-  <%= button_to "Delete", @training_resource, method: :delete, class: '' %>
+  <%= link_to "Back", training_resources_path, class: 'underline' %>
+  <%= link_to "Edit", edit_training_resource_path(@training_resource), class: 'underline' %>
+  <%= button_to "Delete", @training_resource, method: :delete, class: 'underline' %>
 </div>
-<div class="mb-5">
-  <h1 class="text-5xl font-bold">
-    <%= @training_resource.title %>
-  </h1>
-  <p>
-    <%= @training_resource.author %>
+<h1 class="text-5xl font-bold mt-8">
+  <%= @training_resource.title %>
+</h1>
+<div class="flex gap-3 my-4">
+  <h2 class="text-xl font-extralight">
+    By <%= link_to(@training_resource.author, training_resources_path(search: @training_resource.author), class: 'underline') %>
+  </h2>
+  <% @training_resource.tags.each do |tag| %>
+    <%= link_to(tag.name.titleize, training_resources_path(search: tag.name), class: 'px-2 py-1 my-auto rounded text-xs bg-gray-800 text-white') %>
+  <% end %>
+</div>
+<div class="w-3/4 mx-auto">
+  <p class="my-20 text-xl leading-9">
+    Summary: <%= @training_resource.short_description %>
   </p>
-  <%= youtube_iframe(@training_resource.youtube_video_id) %>
-  <div class="flex gap-4">
-    <% @training_resource.tags.each do |tag| %>
-      <div class="px-2 py-1 rounded text-xs bg-gray-800 text-white"><%= tag.name.titleize %></div>
-    <% end %>
-  </div>
+  <% if @training_resource.youtube_video_id.present? %>
+    <div class="my-20">
+      <%= youtube_iframe(@training_resource.youtube_video_id, class: 'w-full h-auto aspect-video') %>
+    </div>
+  <% end %>
+  <p class="my-20 text-xl leading-9">
+    <%= @training_resource.long_description %>
+  </p>
 </div>
-<p>
-  <%= @training_resource.long_description %>
-</p>
