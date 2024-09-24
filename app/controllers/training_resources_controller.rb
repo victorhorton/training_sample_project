@@ -6,7 +6,7 @@ class TrainingResourcesController < ApplicationController
   def index
     @page = params[:page] || 1
     @per_page = params[:per_page] || 9
-    @training_resources = TrainingResource.limit(limit).offset(offset).search(params[:search])
+    @training_resources = TrainingResource.limit(limit).offset(offset).search(params[:search]).with_featured_image
     @max_number = TrainingResource.search(params[:search]).count / limit
   end
 

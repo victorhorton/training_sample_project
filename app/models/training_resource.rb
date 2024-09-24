@@ -26,4 +26,6 @@ class TrainingResource < ApplicationRecord
       eager_load(:tags).all
     end
   }
+
+  scope :with_featured_image, -> { includes(featured_image_attachment: :blob) }
 end
