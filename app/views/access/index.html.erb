@@ -1,9 +1,29 @@
 <div class="p-10 md:p-20 lg:p-40 bg-green-600 text-zinc-200">
   <h1 class="text-center text-4xl lg:text-6xl font-extrabold">Empowering your learning journey</h1>
   <p class="text-center my-4">Everyone everyone has the potential to excel. Our comprehensive training resources are designed to help you unlock your skills, enhance your knowledge, and achieve your goals.</p>
-  <div class="flex gap-4 mt-14 justify-center">
-    <%= link_to('Sign In', '', class: 'border font-medium hover:shadow-inner border-white bg-white text-green-600 px-4 py-2 rounded-full') %>
-    <%= link_to('Sign Up', '', class: 'border font-medium hover:shadow-inner border-white text-white px-4 py-2 rounded-full') %>
+  <div data-controller="user">
+    <div class="flex gap-4 mt-14 justify-center">
+      <button
+        class="border font-medium hover:shadow-inner border-white bg-white text-green-600 px-4 py-2 rounded-full"
+        data-action="click->user#toggleSignUpModal"
+      >Sign Up</button>
+      <button
+        class="border font-medium hover:shadow-inner border-white text-white px-4 py-2 rounded-full"
+        data-action="click->user#toggleSignInModal"
+      >Sign In</button>  
+    </div>
+    <div data-user-target="signInModal" class="fixed inset-0 bg-gray-800 flex items-center justify-center bg-opacity-50 hidden">
+      <div class="w-1/3 bg-white rounded p-5">
+        <button autofocus data-action="click->user#toggleSignInModal">&#10006;</button>
+        <%= render partial: "/users/signin_form", locals: { user: User.new} %>
+      </div>
+    </div>
+    <div data-user-target="signUpModal" class="fixed inset-0 bg-gray-800 flex items-center justify-center bg-opacity-50 hidden">
+      <div class="w-1/3 bg-white rounded p-5">
+        <button autofocus data-action="click->user#toggleSignUpModal">&#10006;</button>
+        <%= render partial: "/users/signup_form", locals: { user: User.new} %>
+      </div>
+    </div>
   </div>
 </div>
 <div class="p-10 lg:px-40 pt-20">
