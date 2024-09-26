@@ -1,4 +1,7 @@
- <nav class="p-8 flex gap-8">
-  <%= link_to 'Home', root_path, class: 'font-bold text-lg' %>
-  <%= link_to 'Training Resources', training_resources_path(page: 1, per_page: 9), class: 'font-bold text-lg' %>
+ <nav class="p-8 flex justify-between items-center">
+  <div class="flex gap-8">
+    <%= link_to 'Home', root_path, class: 'font-bold text-lg' %>
+    <%= link_to 'Training Resources', training_resources_path(page: 1, per_page: 9), class: 'font-bold text-lg' %>
+  </div>
+  <%= button_to("Logout", logout_users_path, class: 'font-bold text-lg') if session[:user_id].present? %>
 </nav> 

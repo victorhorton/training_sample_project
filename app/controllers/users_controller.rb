@@ -10,6 +10,15 @@ class UsersController < ApplicationController
     redirect_to root_path, notice: notice
   end
 
+  def logout
+    if session.clear
+      notice = "Logout Successful!"
+    else
+      notice = "Logout is invalid!"
+    end
+    redirect_to root_path, notice: notice
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
