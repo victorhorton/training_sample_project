@@ -3,15 +3,21 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+      notice = "Login Successful!"
     else
-      flash[:notice] = "Login is invalid!"
-      redirect_to root_path
+      notice = "Login is invalid!"
     end
+    redirect_to root_path, notice: notice
   end
 
   def create
     @user = User.new(user_params)
-    @user.save
+    if @user.save
+      notice = "Signup Successful!"
+    else
+      notice = "Signup Failed!"
+    end
+    redirect_to root_path, notice: notice
   end
 
   private

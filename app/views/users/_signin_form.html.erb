@@ -1,14 +1,14 @@
 <%= form_with(url: login_users_path, method: :post, local: true, class:'w-3/4 mx-auto' ) do |form| %>
   <div class="mb-4">
-    <%= form.label :username, class: 'inline-block text-sm text-black' %>
-    <%= form.text_field :username, class: 'rounded focus:shadow-inner text-black border-gray-800 w-full block' %>
+    <%= form.label :username, class: 'inline-block text-sm text-neutral-950 font-semibold' %>
+    <%= form.text_field :username, class: 'rounded focus:shadow-inner text-neutral-950 border-gray-800 w-full block' %>
   </div>
   <div class="mb-4">
-    <%= form.label :password, class: 'inline-block text-sm text-black' %>
-    <%= form.password_field :password, class: 'rounded focus:shadow-inner text-black border-gray-800 w-full block' %>
+    <%= form.label :password, class: 'inline-block text-sm text-neutral-950 font-semibold' %>
+    <%= form.password_field :password, class: 'rounded focus:shadow-inner text-neutral-950 border-gray-800 w-full block' %>
   </div>
 
   <div>
-    <%= form.submit 'Sign In', class: 'py-2 px-4 text-black border rounded border-gray-800 hover:cursor-pointer hover:shadow-inner' %>
+    <%= form.submit 'Sign In', class: 'py-2 px-4 text-neutral-950 border rounded border-gray-800 hover:cursor-pointer hover:shadow-inner' %>
   </div>
 <% end %>
