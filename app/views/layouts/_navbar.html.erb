@@ -1,7 +1,26 @@
  <nav class="p-8 flex justify-between items-center">
   <div class="flex gap-8">
     <%= link_to 'Home', root_path, class: 'font-bold text-lg' %>
-    <%= link_to 'Training Resources', training_resources_path(page: 1, per_page: 9), class: 'font-bold text-lg' %>
+    <%= link_to(
+      'Training Resources',
+      training_resources_path(page: 1, per_page: 9),
+      class: 'font-bold text-lg'
+    ) if can? :show, TrainingResource%>
   </div>
-  <%= button_to("Logout", logout_users_path, class: 'font-bold text-lg') if session[:user_id].present? %>
+  <% if session[:user_id].present? %>
+    <%= button_to("Logout", logout_users_path, class: 'font-bold text-lg')  %>
+  <% else %>
+    <div data-controller="modal">
+      <button
+        class="font-bold text-lg"
+        data-action="click->modal#toggleModal"
+      >Sign In</button>  
+      <div data-modal-target="modal" class="fixed inset-0 bg-gray-800 flex items-center justify-center bg-opacity-50 hidden">
+        <div class="w-1/3 bg-white rounded p-5">
+          <button autofocus data-action="click->modal#toggleModal">&#10006;</button>
+          <%= render partial: "/users/signin_form" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </nav> 

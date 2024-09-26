@@ -1,5 +1,7 @@
 class TrainingResourcesController < ApplicationController
   include Pagination
+
+  load_and_authorize_resource
   before_action :set_training_resource, only: %i[ show edit update destroy ]
 
   # GET /training_resources or /training_resources.json
