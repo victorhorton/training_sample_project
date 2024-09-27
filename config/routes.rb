@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   resources :training_resources
-  resources :users, only: [ :create ] do
-    collection do
-      post :login
-      post :logout
-    end
-  end
+  resources :users, only: :create
+
+  delete "logout", to: "sessions#destroy"
+  get "login", to: "sessions#new"
+  post "login", to: "sessions#create"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

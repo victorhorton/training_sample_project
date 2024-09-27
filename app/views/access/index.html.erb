@@ -12,7 +12,7 @@
       <div data-modal-target="modal" class="fixed inset-0 bg-gray-800 flex items-center justify-center bg-opacity-50 hidden">
         <div class="w-1/3 bg-white rounded p-5">
           <button autofocus data-action="click->modal#toggleModal">&#10006;</button>
-          <%= render partial: "/users/signup_form", locals: { user: User.new} %>
+          <%= render partial: "/users/form", locals: { user: User.new} %>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
       <div data-modal-target="modal" class="fixed inset-0 bg-gray-800 flex items-center justify-center bg-opacity-50 hidden">
         <div class="w-1/3 bg-white rounded p-5">
           <button autofocus data-action="click->modal#toggleModal">&#10006;</button>
-          <%= render partial: "/users/signin_form" %>
+          <%= render partial: "/sessions/login_form" %>
         </div>
       </div>
     </div>
