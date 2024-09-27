@@ -21,18 +21,28 @@
   </div>
 
   <div class="mb-4">
+    <%= form.label :youtube_video_id, 'Youtube ID', class: 'inline-block text-sm' %>
+    <%= form.text_field :youtube_video_id, class: 'rounded focus:shadow-inner border-gray-800 w-full block' %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :duration, 'Duration in Seconds', class: 'inline-block text-sm' %>
+    <%= form.number_field :duration, min: 0, class: 'rounded focus:shadow-inner border-gray-800 w-full block' %>
+  </div>
+
+  <div class="mb-4">
     <%= form.label :author, class: 'inline-block text-sm' %>
     <%= form.text_field :author, class: 'rounded focus:shadow-inner border-gray-800 w-full block' %>
   </div>
 
   <div class="mb-4">
     <%= form.label :short_description, class: 'inline-block text-sm' %>
-    <%= form.text_field :short_description, class: 'rounded focus:shadow-inner border-gray-800 w-full block' %>
+    <%= form.text_area :short_description, class: 'rounded focus:shadow-inner border-gray-800 w-full block h-auto' %>
   </div>
 
   <div class="mb-4">
     <%= form.label :long_description, class: 'inline-block text-sm' %>
-    <%= form.text_field :long_description, class: 'rounded focus:shadow-inner border-gray-800 w-full block' %>
+    <%= form.text_area :long_description, class: 'rounded focus:shadow-inner border-gray-800 w-full block h-auto' %>
   </div>
 
   <div class="mb-4">
