@@ -4,6 +4,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    can :create, User
+
     return if user.nil?
 
     can :read, TrainingResource
