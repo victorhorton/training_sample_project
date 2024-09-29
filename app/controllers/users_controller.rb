@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     if @user.save
       notice = "Signup Successful!"
     else
-      notice = "Signup Failed!"
+      notice = @user.errors.full_messages.join(", ")
     end
     redirect_to root_path, notice: notice
   end
