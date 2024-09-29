@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    if exception.subject == TrainingResource
-      redirect_to login_path, notice: "Please login"
-    else
-      redirect_to root_path, notice: exception.message
-    end
+    redirect_to root_path, notice: exception.message
   end
 end

@@ -15,7 +15,7 @@
     <%= form.label :username, class: 'inline-block text-sm text-black' %>
     <%= form.text_field :username, class: 'rounded focus:shadow-inner text-black border-gray-800 w-full block' %>
   </div>
-  <% if can? :edit_roles, user %>
+  <% if can? :edit_role, user %>
     <div class="mb-4">
       <%= form.label :role, class: 'inline-block text-sm text-black' %>
       <%= form.select :role, options_for_select(User.roles.map {|k, v| [k.titleize, k]}, user.role), {}, class: 'rounded focus:shadow-inner border-gray-800 text-black w-full block' %>

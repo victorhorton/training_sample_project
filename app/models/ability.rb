@@ -5,14 +5,14 @@ class Ability
 
   def initialize(user)
     can :create, User
+    can :read, TrainingResource
 
     return if user.nil?
 
-    can :read, TrainingResource
     can [ :read, :update ], User, id: user.id
     return unless user.admin?
 
-    can [ :manage, :edit_roles ], User
+    can [ :manage, :edit_role ], User
     can :manage, TrainingResource
   end
 end
