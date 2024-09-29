@@ -77,6 +77,8 @@ class TrainingResourcesController < ApplicationController
         :short_description,
         :long_description,
         :featured_image,
+        :duration,
+        :youtube_video_id,
         {
           tag_ids: [],
           tags_attributes: [ :name ]

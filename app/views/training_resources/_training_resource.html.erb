@@ -1,11 +1,18 @@
 <div class="shadow rounded overflow-hidden">
   <% if training_resource.featured_image.present?  %>
-    <%= image_tag training_resource.featured_image %>
+    <div class="relative">
+      <%= image_tag training_resource.featured_image %>
+      <p class="absolute bottom-0 text-sm right-0 text-white px-1 py-0.5 bg-transparent/60 rounded m-1">
+        <%= human_readable_duration(training_resource.duration) %>
+      </p>
+    </div>
   <% end %>
   <div class="p-3">
-    <h1 class="text-lg font-bold">
-      <%= training_resource.id %>: <%= training_resource.title %>
-    </h1>
+    <div class="flex">
+      <h1 class="text-lg font-bold">
+        <%= training_resource.title %>
+      </h1>
+    </div>
     <div class="flex flex-wrap gap-0.5">
       <% training_resource.tags.each do |tag| %>
         <div class="px-1 py-0.5 rounded text-xs tracking-tight bg-gray-800 text-white"><%= tag.name.titleize %></div>
