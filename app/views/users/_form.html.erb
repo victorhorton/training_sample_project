@@ -15,16 +15,18 @@
     <%= form.label :username, class: 'inline-block text-sm text-black' %>
     <%= form.text_field :username, class: 'rounded focus:shadow-inner text-black border-gray-800 w-full block' %>
   </div>
-  <div class="mb-4">
-    <%= form.label :role, class: 'inline-block text-sm text-black' %>
-    <%= form.select :role, options_for_select(User.roles.map {|k, v| [k.titleize, k]}), class: 'rounded focus:shadow-inner border-gray-800 text-black w-full block' %>
-  </div>  
+  <% if can? :edit_roles, user %>
+    <div class="mb-4">
+      <%= form.label :role, class: 'inline-block text-sm text-black' %>
+      <%= form.select :role, options_for_select(User.roles.map {|k, v| [k.titleize, k]}), class: 'rounded focus:shadow-inner border-gray-800 text-black w-full block' %>
+    </div>
+  <% end %>
   <div class="mb-4">
     <%= form.label :password, class: 'inline-block text-sm text-black' %>
     <%= form.password_field :password, class: 'rounded focus:shadow-inner border-gray-800 text-black w-full block' %>
   </div>
 
   <div>
-    <%= form.submit 'Sign Up', class: 'py-2 px-4 text-black border rounded border-gray-800 hover:cursor-pointer hover:shadow-inner' %>
+    <%= form.submit 'Submit', class: 'py-2 px-4 text-black border rounded border-gray-800 hover:cursor-pointer hover:shadow-inner' %>
   </div>
 <% end %>

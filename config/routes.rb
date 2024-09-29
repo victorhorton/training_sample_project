@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :training_resources
-  resources :users, only: :create
+  resources :users, only: [ :create, :edit, :update ]
 
   delete "logout", to: "sessions#destroy"
   get "login", to: "sessions#new"

@@ -10,7 +10,10 @@
       >Sign Up</button>
       <div data-modal-target="modal" class="fixed inset-0 bg-gray-800 flex items-center justify-center bg-opacity-50 hidden">
         <div class="w-1/3 bg-white rounded p-5">
-          <button autofocus data-action="click->modal#toggleModal">&#10006;</button>
+          <div class="flex justify-between m-4"> 
+            <h1 class="text-3xl font-bold text-black">Sign Up</h1>
+            <button autofocus data-action="click->modal#toggleModal">&#10006;</button>
+          </div>
           <%= render partial: "/users/form", locals: { user: User.new} %>
         </div>
       </div>
@@ -22,7 +25,10 @@
       >Sign In</button>  
       <div data-modal-target="modal" class="fixed inset-0 bg-gray-800 flex items-center justify-center bg-opacity-50 hidden">
         <div class="w-1/3 bg-white rounded p-5">
-          <button autofocus data-action="click->modal#toggleModal">&#10006;</button>
+          <div class="flex justify-between m-4"> 
+            <h1 class="text-3xl font-bold text-black">Sign In</h1>
+            <button autofocus data-action="click->modal#toggleModal">&#10006;</button>
+          </div>
           <%= render partial: "/sessions/login_form" %>
         </div>
       </div>

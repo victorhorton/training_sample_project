@@ -8,7 +8,10 @@
     ) if can? :show, TrainingResource%>
   </div>
   <% if session[:user_id].present? %>
-    <%= button_to("Logout", logout_path, method: :delete, class: 'font-bold text-l') %>
+    <div class="flex gap-4">
+      <%= link_to("Profile", edit_user_path(session[:user_id]), class: 'font-bold text-l') %>
+      <%= button_to("Logout", logout_path, method: :delete, class: 'font-bold text-l') %>
+    </div>
   <% else %>
     <div data-controller="modal">
       <button
