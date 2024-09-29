@@ -1,0 +1,11 @@
+<% if notice.present? %>
+  <div data-controller="notice">
+    <div
+      data-notice-target="notice"
+      class="absolute text-center text-lg inset-x-0 w-1/2 top-0 p-2 mx-auto my-4 border rounded"
+    >
+      <%= notice %>
+      <button class="float-end" data-action="click->notice#clearNotice">&#10006;</button>
+    </div>
+  </div>
+<% end %>
