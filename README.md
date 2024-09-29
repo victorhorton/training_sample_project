@@ -1,24 +1,37 @@
-# README
+# Training Sample Project Setup Guide
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This guide will help you set up the `training_sample_project` on your local machine.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+Ensure you have the following installed:
 
-* System dependencies
+- **Ruby**: 3.3.x
+- **Rails**: 7.2.x
 
-* Configuration
+## Getting Started
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 1. Clone the repository
+### 2. Install gems
+```
+bundle install
+```
+### 2. Setup DB
+```
+rails db:create
+```
+```
+rails db:migrate
+```
+```
+rails db:seed
+```
+### 2. Run server
+For tailwind style updates
+```
+bin/dev
+```
+For traditional server
+```
+rails s
+```
