@@ -1,0 +1,48 @@
+---
+- title: The Problem with Time & Timezones
+  author: Computerphile
+  short_description: This video delves into the complexities of time and time zones from a software engineering perspective. It explains how handling time across different regions and systems can lead to bugs and errors in software applications. The video also explores best practices for developers to account for time zone differences in their code.
+  long_description: In this video, Computerphile tackles the often-overlooked challenge of dealing with time and time zones in software development. Time may seem straightforward, but as soon as systems interact across different regions, the complexity skyrockets. The video covers various issues developers face when working with global time, such as daylight savings, leap seconds, and inconsistent time zone definitions across countries. It also highlights how critical it is to manage timestamps, conversion between time zones, and coordinate time across distributed systems. Through examples, it showcases real-world issues caused by improper handling of time and the impact these bugs can have on users and systems alike. Additionally, the video provides recommendations for developers, such as using UTC for storing time and employing reliable libraries like moment.js or tzdata for converting between time zones. By understanding these nuances, developers can avoid common pitfalls and ensure their applications work smoothly, no matter the region.
+  featured_image_path: computerphile/images/timezones.jpg
+  youtube_video_id: -5wpm-gesOY
+  duration: 612
+  tag_names:
+    [
+      "Time Zones in Software",
+      "Software Development Best Practices",
+      "Handling Time",
+    ]
+- title: Hacking Websites with SQL Injection
+  author: Computerphile
+  short_description: This video explores the technique of SQL injection, a common hacking method used to exploit vulnerabilities in websites. It explains how attackers manipulate SQL queries to gain unauthorized access to databases, and demonstrates real-world examples of how this attack works. The video also covers how developers can protect their applications from SQL injection attacks.
+  long_description: In this video, Computerphile dives into the concept of SQL injection, one of the most prevalent and dangerous web vulnerabilities. The video begins by explaining the basics of SQL (Structured Query Language) and how web applications often interact with databases. It then shows how attackers can inject malicious SQL code into input fields to manipulate a database's behavior, potentially gaining access to sensitive data, modifying records, or even deleting entire databases. Through live demonstrations, the video illustrates how an attacker can bypass login forms, access hidden data, and execute arbitrary commands by exploiting weak query logic. Furthermore, the video emphasizes the importance of writing secure code and highlights best practices for developers, such as using prepared statements, input validation, and ORM frameworks to mitigate the risk of SQL injection. By understanding the mechanics of this attack, developers can better safeguard their applications and protect user data from exploitation.
+  featured_image_path: computerphile/images/sql_injection.jpg
+  youtube_video_id: _jKylhJtPmI
+  duration: 538
+  tag_names: ["SQL Injection Vulnerability", "Web Security", "Database Hacking"]
+- title: Floating Point Numbers
+  author: Computerphile
+  short_description: This video explains why floating point numbers can cause unexpected mathematical errors in software development. It discusses how computers represent decimal numbers in binary and the precision limitations that lead to inaccuracies in calculations. The video also covers common scenarios where these issues arise and how developers can manage them.
+  long_description: In this video, Computerphile explores the intricacies of floating point numbers and why they often cause problems in software applications. The video begins by explaining how computers store numbers in binary, using the IEEE 754 standard for floating point arithmetic. While this system allows for a wide range of values, it also introduces precision errors because some decimal numbers cannot be exactly represented in binary form. These small inaccuracies can accumulate and cause significant issues in scientific calculations, financial applications, and everyday programming tasks. The video provides concrete examples, such as 0.1 + 0.2 not equaling 0.3 due to rounding errors, and demonstrates how this can lead to bugs that are difficult to detect. The video also discusses strategies for mitigating these problems, including using arbitrary precision libraries or avoiding floating point arithmetic when exact results are required. Developers are encouraged to be aware of the limitations and handle floating point calculations with care.
+  featured_image_path: computerphile/images/floating_point.jpg
+  youtube_video_id: PZRI1IfStY0
+  duration: 555
+  tag_names:
+    [
+      "Floating Point Precision",
+      "Programming Math Errors",
+      "Numerical Computation",
+    ]
+- title: Why C is so Influential
+  author: Computerphile
+  short_description: This video explores why the C programming language has had such a significant impact on software development. It delves into the language's simplicity, efficiency, and flexibility, highlighting how C has influenced many modern programming languages and systems. The video also discusses C's lasting relevance in today's technology landscape.
+  long_description: In this video, Computerphile examines the profound influence of the C programming language on the world of computing. Developed in the early 1970s, C provided a perfect balance between low-level hardware control and high-level abstraction, making it both powerful and efficient. The video highlights how C's syntax and structure have directly influenced many popular languages like C++, Java, and even Python. It explains how C's portability across different hardware architectures made it the go-to language for systems programming, operating system development (including UNIX), and embedded systems. The video also covers C's role in shaping the concept of memory management and direct access to hardware, which are still crucial in modern computing. Despite newer languages with more features and automation, C remains relevant because of its speed, control, and efficiency, making it indispensable for performance-critical applications. Developers today still rely on C for creating operating systems, device drivers, and software that requires fine-tuned performance.
+  featured_image_path: computerphile/images/c_influence.jpg
+  youtube_video_id: ci1PJexnfNE
+  duration: 649
+  tag_names:
+    [
+      "C Programming Language",
+      "Systems Programming",
+      "Programming Language Influence",
+    ]
