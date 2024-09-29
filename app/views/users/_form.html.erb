@@ -18,7 +18,7 @@
   <% if can? :edit_roles, user %>
     <div class="mb-4">
       <%= form.label :role, class: 'inline-block text-sm text-black' %>
-      <%= form.select :role, options_for_select(User.roles.map {|k, v| [k.titleize, k]}), class: 'rounded focus:shadow-inner border-gray-800 text-black w-full block' %>
+      <%= form.select :role, options_for_select(User.roles.map {|k, v| [k.titleize, k]}, user.role), {}, class: 'rounded focus:shadow-inner border-gray-800 text-black w-full block' %>
     </div>
   <% end %>
   <div class="mb-4">

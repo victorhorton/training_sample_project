@@ -25,3 +25,8 @@ training_resources_data = YAML.load(File.open(Rails.root.join("db/seeds_data/tra
 training_resources_data.each_with_index do |row, idx|
   TrainingResource.create(row.to_hash)
 end
+
+users_data = YAML.load(File.open(Rails.root.join("db/seeds_data/users.yaml")))
+users_data.each do |row|
+  User.create!(row.to_hash)
+end
