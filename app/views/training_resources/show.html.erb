@@ -16,16 +16,14 @@
     <%= link_to(tag.name.titleize, training_resources_path(search: tag.name), class: 'px-2 py-1 my-auto rounded text-xs bg-gray-800 text-white') %>
   <% end %>
 </div>
-<div class="w-3/4 mx-auto">
-  <p class="my-20 text-xl leading-9">
-    Summary: <%= @training_resource.short_description %>
-  </p>
-  <% if @training_resource.youtube_video_id.present? %>
-    <div class="my-20">
-      <%= youtube_iframe(@training_resource.youtube_video_id, class: 'w-full h-auto aspect-video') %>
-    </div>
-  <% end %>
-  <p class="my-20 text-xl leading-9">
-    <%= @training_resource.long_description %>
-  </p>
-</div>
+<p class="my-20 text-xl leading-9 w-3/4 mx-auto">
+  Summary: <%= @training_resource.short_description %>
+</p>
+<% if @training_resource.youtube_video_id.present? %>
+  <div class="my-20 w-full md:w-3/4 mx-auto">
+    <%= youtube_iframe(@training_resource.youtube_video_id, class: 'w-full h-auto aspect-video') %>
+  </div>
+<% end %>
+<p class="my-20 text-xl leading-9 w-3/4 mx-auto">
+  <%= @training_resource.long_description %>
+</p>

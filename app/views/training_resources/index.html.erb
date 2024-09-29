@@ -2,9 +2,9 @@
 
   <% content_for :title, "Training resources" %>
 
-  <h1 class="text-4xl font-extrabold">Training resources</h1>
+  <h1 class="text-4xl font-extrabold mx-2">Training resources</h1>
 
-  <div class="flex justify-between my-6">
+  <div class="flex justify-between my-6 mx-2">
     <%= select_tag(
       :pagination,
       options_for_select([9, 15, 30], @per_page),
