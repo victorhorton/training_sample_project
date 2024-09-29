@@ -46,9 +46,9 @@
 </div>
 <div class="p-10 lg:px-40 lg:pt-20">
   <h1 class="text-5xl lg:text-6xl font-extrabold">Top Training Categories</h1>
-  <div class="flex flex-wrap justify-evenly my-10 gap-4">
+  <div class="flex flex-wrap justify-evenly my-10 gap-2">
     <% @tags.each do |tag| %>
-      <div class="hover:scale-125 hover:bg-white duration-75">
+      <div class="hover:scale-105 hover:bg-white px-1 hover:font-bold duration-75">
         <%= link_to tag.name.titleize, training_resources_path(search: tag.name, page: 1, per_page: 9) %>
       </div>
     <% end %>
