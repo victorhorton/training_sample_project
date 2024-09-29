@@ -3,7 +3,7 @@
     <div class="relative">
       <%= image_tag training_resource.featured_image %>
       <p class="absolute bottom-0 text-sm right-0 text-white px-1 py-0.5 bg-transparent/60 rounded m-1">
-        <%= human_readable_duration(training_resource.duration) %>
+        <%= timestap_duration(training_resource.duration) %>
       </p>
     </div>
   <% end %>

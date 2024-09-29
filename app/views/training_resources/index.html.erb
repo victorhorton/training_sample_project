@@ -7,7 +7,7 @@
   <div class="flex justify-between my-6 mx-2">
     <%= select_tag(
       :pagination,
-      options_for_select([9, 15, 30], @per_page),
+      options_for_select([8, 16, 32], @per_page),
       {
         'data-pagination-target': "select",
         'data-controller': "pagination",

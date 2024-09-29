@@ -16,7 +16,10 @@
     <%= link_to(tag.name.titleize, training_resources_path(search: tag.name), class: 'px-2 py-1 my-auto rounded text-xs bg-gray-800 text-white') %>
   <% end %>
 </div>
-<p class="my-20 text-xl leading-9 w-3/4 mx-auto">
+<p class="text-sm text-xl mt-20 mb-10 w-3/4 mx-auto">
+  Duration: <%= human_readable_duration(@training_resource.duration) %>
+</p>
+<p class="mb-20 text-xl leading-9 w-3/4 mx-auto">
   Summary: <%= @training_resource.short_description %>
 </p>
 <% if @training_resource.youtube_video_id.present? %>

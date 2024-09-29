@@ -1,11 +1,8 @@
 module Pagination
   extend ActiveSupport::Concern
 
-  # @page = params[:page] || 1
-  # @per_page = params[:per_page] || 9
-
   def limits
-    [ 9, 15, 30 ]
+    [ 8, 16, 32 ]
   end
 
   def offset
