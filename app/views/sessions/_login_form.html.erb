@@ -1,11 +1,19 @@
 <%= form_with(url: login_path, local: true, class:'w-3/4 mx-auto' ) do |form| %>
   <div class="mb-4">
     <%= form.label :username, class: 'inline-block text-sm text-neutral-950 font-semibold' %>
-    <%= form.text_field :username, class: 'rounded focus:shadow-inner text-neutral-950 border-gray-800 w-full block' %>
+    <%= form.text_field(
+      :username,
+      autocomplete: 'username',
+      class: 'rounded focus:shadow-inner text-neutral-950 border-gray-800 w-full block'
+    ) %>
   </div>
   <div class="mb-4">
     <%= form.label :password, class: 'inline-block text-sm text-neutral-950 font-semibold' %>
-    <%= form.password_field :password, class: 'rounded focus:shadow-inner text-neutral-950 border-gray-800 w-full block' %>
+    <%= form.password_field(
+      :password,
+      autocomplete: 'current-password',
+      class: 'rounded focus:shadow-inner text-neutral-950 border-gray-800 w-full block'
+    ) %>
   </div>
 
   <div>
