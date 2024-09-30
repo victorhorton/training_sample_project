@@ -55,7 +55,7 @@ class TrainingResourcesController < ApplicationController
 
   # DELETE /training_resources/1 or /training_resources/1.json
   def destroy
-    @training_resource.destroy!
+    @training_resource.destroy
 
     respond_to do |format|
       format.html { redirect_to training_resources_path, status: :see_other, notice: "Training resource was successfully destroyed." }
