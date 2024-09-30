@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="mb-4">
-    <%= form.label :username, class: 'inline-block text-sm text-black' %>
+    <%= form.label :username, class: 'inline-block text-sm text-neutral-950 font-semibold' %>
     <%= form.text_field :username, class: 'rounded focus:shadow-inner text-black border-gray-800 w-full block' %>
   </div>
   <% if can? :edit_role, user %>
     <div class="mb-4">
-      <%= form.label :role, class: 'inline-block text-sm text-black' %>
+      <%= form.label :role, class: 'inline-block text-sm text-neutral-950 font-semibold' %>
       <%= form.select :role, options_for_select(User.roles.map {|k, v| [k.titleize, k]}, user.role), {}, class: 'rounded focus:shadow-inner border-gray-800 text-black w-full block' %>
     </div>
   <% end %>
   <div class="mb-4">
-    <%= form.label :password, class: 'inline-block text-sm text-black' %>
+    <%= form.label :password, class: 'inline-block text-sm text-neutral-950 font-semibold' %>
     <%= form.password_field :password, class: 'rounded focus:shadow-inner border-gray-800 text-black w-full block' %>
   </div>
 
   <div class="mb-4">
-    <%= form.label :password_confirmation, class: 'inline-block text-sm text-black' %>
+    <%= form.label :password_confirmation, class: 'inline-block text-sm text-neutral-950 font-semibold' %>
     <%= form.password_field :password_confirmation, class: 'rounded focus:shadow-inner border-gray-800 text-black w-full block' %>
   </div>
 

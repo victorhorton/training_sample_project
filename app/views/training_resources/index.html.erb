@@ -26,8 +26,15 @@
 
     <div data-controller="search">
       <%= form_tag('', 'data-action': "submit->search#submit") do %>
-        <%= search_field_tag(:search, params[:search], {'data-search-target': "input", class: 'rounded focus:shadow-inner border-gray-800'}) %>
-        <%= button_tag('Search', class: 'p-2 border hover:shadow-inner rounded border-gray-800') %>
+        <%= search_field_tag(
+          :search, params[:search],
+          data: {'search-target': "input"},
+          class: 'rounded focus:shadow-inner border-gray-800'
+        ) %>
+        <%= button_tag(
+          'Search',
+          class: 'p-2 border hover:shadow-inner rounded border-gray-800'
+        ) %>
       <% end %>
     </div>
   </div>
