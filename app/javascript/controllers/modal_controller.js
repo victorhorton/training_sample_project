@@ -5,5 +5,6 @@ export default class extends Controller {
 
   toggleModal() {
     this.modalTarget.classList.toggle("hidden");
+    this.modalTarget.classList.toggle("flex");
   }
 }
