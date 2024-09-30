@@ -82,7 +82,7 @@
   short_description: Properly naming variables, functions, and other code elements is essential for enhancing code readability and maintainability. Clear and descriptive names make it easier for developers to understand the purpose and functionality of the code, facilitating collaboration and future development.
   long_description: Using meaningful and consistent names in your code significantly improves its clarity and comprehensibility. Good naming practices involve choosing names that accurately describe the role or value of a variable, the action performed by a function, or the purpose of a class or module. This reduces ambiguity and the need for excessive comments, effectively making the code self-documenting. Properly named code elements help developers quickly grasp the logic and flow of the program, which is especially beneficial during debugging, code reviews, and when onboarding new team members. Additionally, consistent naming conventions across a codebase promote a unified coding style, enhancing teamwork and reducing misunderstandings. By investing time in selecting appropriate names, developers can create code that is easier to read, maintain, and extend, ultimately contributing to higher quality and more reliable software.
   featured_image_path: code_aesthetic/images/how_not_to_name_things.jpg
-  youtube_video_id: J3wNP6u5YU
+  youtube_video_id: -J3wNP6u5YU
   duration: 599
   tag_names:
     [
