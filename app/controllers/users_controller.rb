@@ -28,11 +28,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(
-      :username,
-      :role,
-      :password,
-      :password_confirmation
-    )
+    permitted = [ :username, :password, :password_confirmation ]
+    permitted << :role if can?(:edit_role, User)
+    params.require(:user).permit(permitted)
   end
 end
