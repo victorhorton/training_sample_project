@@ -4,6 +4,13 @@ class TrainingResource < ApplicationRecord
   has_many :taggings, dependent: :delete_all
   has_many :tags, through: :taggings
 
+  validates :author, presence: true
+  validates :title, presence: true
+  validates :short_description, presence: true
+  validates :long_description, presence: true
+  validates :youtube_video_id, presence: true
+  validates :duration, presence: true
+
   accepts_nested_attributes_for :tags, reject_if: :all_blank
 
   scope :search, ->(query) {
