@@ -5,18 +5,20 @@
   <%= link_to("Edit", edit_training_resource_path(@training_resource), class: 'underline') if can? :edit, @training_resource %>
   <%= button_to("Delete", @training_resource, method: :delete, class: 'underline') if can? :destroy, @training_resource %>
 </div>
-<h1 class="text-5xl font-bold mt-8">
+<h1 class="text-5xl font-bold mt-8 mx-2">
   <%= @training_resource.title %>
 </h1>
-<div class="flex gap-3 my-4">
+<div class="flex flex-wrap gap-3 my-4 mx-2">
   <h2 class="text-xl font-extralight">
     By <%= link_to(@training_resource.author, training_resources_path(search: @training_resource.author), class: 'underline') %>
   </h2>
-  <% @training_resource.tags.each do |tag| %>
-    <%= link_to(tag.name.titleize, training_resources_path(search: tag.name), class: 'px-2 py-1 my-auto rounded text-xs bg-gray-800 text-white') %>
-  <% end %>
+  <div class="flex flex-wrap gap-1">
+    <% @training_resource.tags.each do |tag| %>
+      <%= link_to(tag.name.titleize, training_resources_path(search: tag.name), class: 'px-2 py-1 my-auto rounded text-xs bg-gray-800 text-white') %>
+    <% end %>
+  </div>
 </div>
-<p class="text-sm text-xl mt-20 mb-10 w-3/4 mx-auto">
+<p class="text-xl mt-20 mb-10 w-3/4 mx-auto">
   Duration: <%= human_readable_duration(@training_resource.duration) %>
 </p>
 <p class="mb-20 text-xl leading-9 w-3/4 mx-auto">
