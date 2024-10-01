@@ -17,7 +17,7 @@ class TrainingResourcesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create training_resource" do
     assert_difference("TrainingResource.count") do
-      post training_resources_url, params: { training_resource: { author: @training_resource.author, long_description: @training_resource.long_description, short_description: @training_resource.short_description, title: @training_resource.title } }
+      post training_resources_url, params: { training_resource: { author: @training_resource.author, long_description: @training_resource.long_description, short_description: @training_resource.short_description, title: @training_resource.title, duration: @training_resource.duration, youtube_video_id: @training_resource.youtube_video_id } }
     end
 
     assert_redirected_to training_resource_url(TrainingResource.last)
