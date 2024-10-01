@@ -4,8 +4,9 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+# test/fixtures/tags.yml
+tag_one:
+  name: "Tag 1"
+
+tag_two:
+  name: "Tag 2"

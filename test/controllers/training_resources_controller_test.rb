@@ -3,6 +3,12 @@ require "test_helper"
 class TrainingResourcesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @training_resource = training_resources(:one)
+    @tag1 = tags(:tag_one)
+    @tag2 = tags(:tag_two)
+    @training_resource.tags << [ @tag1, @tag2 ]
+
+    @admin = users(:admin)  # Assuming you have an admin user in your fixtures
+    post login_url, params: { username: @admin.username, password: "password" }
   end
 
   test "should get index" do
